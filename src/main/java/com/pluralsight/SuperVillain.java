@@ -15,16 +15,14 @@ public class SuperVillain extends Person {
     @Override
     public void fight(Person opponent) {
         Random randomNumber = new Random();
-        int baseDamage = randomNumber.nextInt(101);
+        double randomness = randomNumber.nextDouble(0.1, 1);
 
 
-        int damage = baseDamage + this.getHatredLevel();
+        int damage = (int) (randomness * this.getHatredLevel());
 
-        if (baseDamage == 0) {
-            System.out.println(this.name + " fires a sneaky blast... but misses!");
-        } else {
-            System.out.println(this.getName() + " hits " + opponent.getName() + " with a sneaky blast for " + damage + " total damage");
-            opponent.takeDamage(damage);
-        }
+        System.out.println(this.getName() + " hits " + opponent.getName() + " with an impactful blast for " + damage + " total damage");
+        opponent.takeDamage(damage);
+
     }
+
 }

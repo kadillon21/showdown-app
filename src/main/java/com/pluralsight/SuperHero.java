@@ -26,4 +26,16 @@ public class SuperHero extends Person{
             opponent.takeDamage(damage);
         }
     }
+
+    public void poisonDart(Person opponent) {
+        Random randomNumber = new Random();
+        int chance = randomNumber.nextInt(101);
+
+        if (chance >= 2) {
+            System.out.println(this.name + " tried to hit " + opponent.getName() + "with a poison dart but missed!");
+        } else {
+            opponent.experiencePoints -= (int) (opponent.experiencePoints*.1);
+            System.out.println(this.getName() + " hits " + opponent.getName() + " with a poison dart lowering their hatred to " + opponent.getExperiencePoints());
+        }
+    }
 }
