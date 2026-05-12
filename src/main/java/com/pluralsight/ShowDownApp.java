@@ -24,5 +24,11 @@ public class ShowDownApp {
 
 
         }
+
+        if (thragg.isAlive()){
+            System.out.println("Thragg single handily won the Viltrumite war, did you expect anything else?");
+        } else {
+            System.out.println("Thrag.... lost? Space Racer must have hit him with his lazer on accident.");
+        }
     }
 }
